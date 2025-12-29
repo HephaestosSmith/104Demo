@@ -1,7 +1,7 @@
-namespace Demo.ErrorHandle
+﻿namespace Demo.ErrorHandle
 {
     /// <summary>
-    /// 共用元件發生例外狀況
+    /// ?梁?辣?潛?靘??瘜?
     /// </summary>
     public class InternalException : BaseException
     {
@@ -17,7 +17,7 @@ namespace Demo.ErrorHandle
     }
 
     /// <summary>
-    /// 商業邏輯例外狀況
+    /// ?平?摩靘??瘜?
     /// </summary>
     public class BusinessException : BaseException
     {
@@ -33,7 +33,7 @@ namespace Demo.ErrorHandle
     }
 
     /// <summary>
-    /// 外部服務例外狀況
+    /// 憭??靘??瘜?
     /// </summary>
     public class ExternalException : BaseException
     {
@@ -49,7 +49,7 @@ namespace Demo.ErrorHandle
     }
 
     /// <summary>
-    /// 驗證/授權例外狀況
+    /// 撽?/??靘??瘜?
     /// </summary>
     public class AuthException : BaseException
     {
@@ -65,7 +65,7 @@ namespace Demo.ErrorHandle
     }
 
     /// <summary>
-    /// 非預期錯誤例外狀況
+    /// ???隤支?憭?瘜?
     /// </summary>
     public class UnexpectedException : BaseException
     {

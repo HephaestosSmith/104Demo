@@ -1,4 +1,4 @@
-using Demo;
+ï»¿using Demo;
 using Demo.Helpers;
 using Demo.Interface;
 using Demo.Middlewares;
@@ -38,8 +38,8 @@ builder.Services.AddScoped<JwtBearerHelper>();
 builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddScoped<IUserService, UserService>();
 
-// µù¥U DbContext¡]¨Ï¥Î Default connection string¡^
-// ¥ıÅª¨ú³s½u¦r¦ê¥H«K«áÄò WaitForDb ¨Ï¥Î
+// è¨»å†Š DbContextï¼ˆä½¿ç”¨ Default connection stringï¼‰
+// å…ˆè®€å–é€£ç·šå­—ä¸²ä»¥ä¾¿å¾ŒçºŒ WaitForDb ä½¿ç”¨
 var connStr = builder.Configuration.GetConnectionString("Default");
 if (string.IsNullOrEmpty(connStr))
 {
@@ -53,13 +53,13 @@ builder.Services.AddDbContext<DemoDbContext>(options =>
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-// Swagger ³]©w
+// Swagger è¨­å®š
 builder.Services.AddSwaggerServices();
 
 var jwtBearer = new JwtBearer();
 builder = jwtBearer.SetJwtBearer(builder);
 
-// µ¥«İ¸ê®Æ®w¥i¥Î¡]¨Ï¥Î¥ı«eÅª¨úªº connStr¡^
+// ç­‰å¾…è³‡æ–™åº«å¯ç”¨ï¼ˆä½¿ç”¨å…ˆå‰è®€å–çš„ connStrï¼‰
 await WaitForDb(connStr!);
 
 var app = builder.Build();

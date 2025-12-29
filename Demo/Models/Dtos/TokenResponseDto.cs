@@ -1,4 +1,4 @@
-namespace Demo.Models.Dtos
+﻿namespace Demo.Models.Dtos
 {
     public class TokenResponseDto
     {

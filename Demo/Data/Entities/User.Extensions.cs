@@ -1,4 +1,4 @@
-using Demo.Helpers;
+ï»¿using Demo.Helpers;
 using System;
 
 namespace Demo.Data.Entities
@@ -6,7 +6,7 @@ namespace Demo.Data.Entities
     public partial class User
     {
         /// <summary>
-        /// ³]©w±K½X¡]·|²£¥Í salt ¨Ã¥H PBKDF2 Àx¦s¨ì PasswordHash¡^
+        /// è¨­å®šå¯†ç¢¼ï¼ˆæœƒç”¢ç”Ÿ salt ä¸¦ä»¥ PBKDF2 å„²å­˜åˆ° PasswordHashï¼‰
         /// </summary>
         public void SetPassword(string plainPassword)
         {
@@ -15,7 +15,7 @@ namespace Demo.Data.Entities
         }
 
         /// <summary>
-        /// ÅçÃÒ±K½X
+        /// é©—è­‰å¯†ç¢¼
         /// </summary>
         public bool VerifyPassword(string plainPassword)
         {

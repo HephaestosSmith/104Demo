@@ -1,4 +1,4 @@
-services:
+﻿services:
   demo:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development

@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Linq;
 using System.Threading.Tasks;
 using Demo.Interface;
@@ -31,14 +31,14 @@ namespace Demo.Controllers
         }*/
 
         /// <summary>
-        /// ÅçÃÒ Authorization header ¤¤ªº Bearer token¡A¦^¶ÇÅçÃÒµ²ªG
+        /// é©—è­‰ Authorization header ä¸­çš„ Bearer tokenï¼Œå›å‚³é©—è­‰çµæœ
         /// </summary>
-        /// <returns>ÅçÃÒµ²ªG</returns>
+        /// <returns>é©—è­‰çµæœ</returns>
         [HttpGet("CheckJWT")]
-        [SwaggerOperation(Summary = "ÀË¬d JWT", Description = "ÅçÃÒ Authorization header ¤¤ªº Bearer token¡A¦^¶ÇÅçÃÒµ²ªG")]
+        [SwaggerOperation(Summary = "æª¢æŸ¥ JWT", Description = "é©—è­‰ Authorization header ä¸­çš„ Bearer tokenï¼Œå›å‚³é©—è­‰çµæœ")]
         public async Task<ActionResult<TokenResponse>> CheckJWT()
         {
-            // ¨ú±o Authorization header¡]¥i¯à¬OªÅ©Î¦h­È¡^
+            // å–å¾— Authorization headerï¼ˆå¯èƒ½æ˜¯ç©ºæˆ–å¤šå€¼ï¼‰
             var authHeader = Request.Headers["Authorization"].FirstOrDefault();
             if (string.IsNullOrWhiteSpace(authHeader))
             {
@@ -55,7 +55,7 @@ namespace Demo.Controllers
                 return Unauthorized(new { message = "Bearer token missing" });
             }
 
-            // ©I¥s§Aªº token service °µÅçÃÒ¡]°²³] CheckAsync ±µ¨ü token ¦r¦ê¡^
+            // å‘¼å«ä½ çš„ token service åšé©—è­‰ï¼ˆå‡è¨­ CheckAsync æ¥å— token å­—ä¸²ï¼‰
             var checkResult = await _tokenService.CheckAsync(token);
             if (checkResult == null)
             {

@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Text;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
@@ -12,7 +12,7 @@ namespace Demo.Data.Context
     {
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder)
         {
-            // Åª¨úÀô¹ÒÅÜ¼Æ ENCRYPTION_KEY¡]­ì©l¦r¦ê©Î¤w¬O Base64¡^
+            // è®€å–ç’°å¢ƒè®Šæ•¸ ENCRYPTION_KEYï¼ˆåŸå§‹å­—ä¸²æˆ–å·²æ˜¯ Base64ï¼‰
             var rawKey = Environment.GetEnvironmentVariable("ENCRYPTION_KEY");
             if (string.IsNullOrEmpty(rawKey))
             {
@@ -39,14 +39,14 @@ namespace Demo.Data.Context
                 v => v == null ? null : CryptoHelper.DecryptStringFromBase64(keyBytes, v)
             );
 
-            // ³]©w ValueConverter ¨Ã¦P¨B«ü©w³Ì¤jªø«×¥HÁ×§K EF ¹Á¸Õ²£¥Í¹L¤pªºÄæ¦ì
+            // è¨­å®š ValueConverter ä¸¦åŒæ­¥æŒ‡å®šæœ€å¤§é•·åº¦ä»¥é¿å… EF å˜—è©¦ç”¢ç”Ÿéå°çš„æ¬„ä½
             modelBuilder.Entity<User>()
                 .Property(e => e.Phone)
                 .HasConversion(phoneConverter)
                 .HasMaxLength(256);
         }
 
-        // ±N¤å¦rÂà¬° Base64¡]¨Ï¥Î UTF-8 ½s½X¡^
+        // å°‡æ–‡å­—è½‰ç‚º Base64ï¼ˆä½¿ç”¨ UTF-8 ç·¨ç¢¼ï¼‰
         private static string StringToBase64(string input)
         {
             if (input == null) throw new ArgumentNullException(nameof(input));

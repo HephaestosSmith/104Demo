@@ -1,4 +1,4 @@
-using Demo.Interface;
+ï»¿using Demo.Interface;
 using Demo.Models.Dtos;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -27,10 +27,10 @@ namespace Demo.Controllers
 
 
         // POST: api/user
-        // µù¥U¨Ï¥ÎªÌ¡G¤¹³\°Î¦W
+        // è¨»å†Šä½¿ç”¨è€…ï¼šå…è¨±åŒ¿å
         [HttpPost]
         [AllowAnonymous]
-        [SwaggerOperation(Summary = "µù¥U¨Ï¥ÎªÌ", Description = "µù¥U¨Ï¥ÎªÌ")]
+        [SwaggerOperation(Summary = "è¨»å†Šä½¿ç”¨è€…", Description = "è¨»å†Šä½¿ç”¨è€…")]
         public async Task<ActionResult<UserDto>> Create([FromBody] CreateUserDto dto, CancellationToken cancellationToken)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
@@ -42,10 +42,10 @@ namespace Demo.Controllers
         }
 
         // POST: api/user/login
-        // ¨Ï¥ÎªÌµn¤J¡A¤¹³\°Î¦W
+        // ä½¿ç”¨è€…ç™»å…¥ï¼Œå…è¨±åŒ¿å
         [HttpPost("login")]
         [AllowAnonymous]
-        [SwaggerOperation(Summary = "¨Ï¥ÎªÌµn¤J", Description = "¨ú±oJWT Token")]
+        [SwaggerOperation(Summary = "ä½¿ç”¨è€…ç™»å…¥", Description = "å–å¾—JWT Token")]
         public async Task<ActionResult<TokenResponseDto>> Login([FromBody] LoginRequestDto dto, CancellationToken cancellationToken)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
@@ -59,7 +59,7 @@ namespace Demo.Controllers
 
         // GET: api/user
         [HttpGet]
-        [SwaggerOperation(Summary = "¨ú±o©Ò¦³¨Ï¥ÎªÌ¸ê®Æ²M³æ", Description = "¨ú±o©Ò¦³¨Ï¥ÎªÌ¸ê®Æ²M³æ")]
+        [SwaggerOperation(Summary = "å–å¾—æ‰€æœ‰ä½¿ç”¨è€…è³‡æ–™æ¸…å–®", Description = "å–å¾—æ‰€æœ‰ä½¿ç”¨è€…è³‡æ–™æ¸…å–®")]
         public async Task<ActionResult<IEnumerable<UserDto>>> GetAll(CancellationToken cancellationToken)
         {
             var users = await _service.GetAllAsync(cancellationToken);
@@ -68,7 +68,7 @@ namespace Demo.Controllers
 
         // GET: api/user/5
         [HttpGet("{id}", Name = "GetUser")]
-        [SwaggerOperation(Summary = "¨ú±o¨Ï¥ÎªÌ¸ê®Æ", Description = "¨ú±o¨Ï¥ÎªÌ¸ê®Æ")]
+        [SwaggerOperation(Summary = "å–å¾—ä½¿ç”¨è€…è³‡æ–™", Description = "å–å¾—ä½¿ç”¨è€…è³‡æ–™")]
         public async Task<ActionResult<UserDto>> GetById(int id, CancellationToken cancellationToken)
         {
             var user = await _service.GetByIdAsync(id, cancellationToken);
@@ -78,7 +78,7 @@ namespace Demo.Controllers
 
         // PUT: api/user/5
         [HttpPut("{id}")]
-        [SwaggerOperation(Summary = "ÅÜ§ó¨Ï¥ÎªÌ¸ê®Æ", Description = "ÅÜ§ó¨Ï¥ÎªÌ¸ê®Æ")]
+        [SwaggerOperation(Summary = "è®Šæ›´ä½¿ç”¨è€…è³‡æ–™", Description = "è®Šæ›´ä½¿ç”¨è€…è³‡æ–™")]
         public async Task<IActionResult> Update(int id, [FromBody] UpdateUserDto dto, CancellationToken cancellationToken)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
@@ -91,7 +91,7 @@ namespace Demo.Controllers
 
         // DELETE: api/user/5
         [HttpDelete("{id}")]
-        [SwaggerOperation(Summary = "§R°£¨Ï¥ÎªÌ¸ê®Æ", Description = "§R°£¨Ï¥ÎªÌ¸ê®Æ")]
+        [SwaggerOperation(Summary = "åˆªé™¤ä½¿ç”¨è€…è³‡æ–™", Description = "åˆªé™¤ä½¿ç”¨è€…è³‡æ–™")]
         public async Task<IActionResult> Delete(int id, CancellationToken cancellationToken)
         {
             var ok = await _service.DeleteAsync(id, cancellationToken);
