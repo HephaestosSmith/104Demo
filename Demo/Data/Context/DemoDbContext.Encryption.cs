@@ -45,12 +45,5 @@ namespace Demo.Data.Context
                 .HasConversion(phoneConverter)
                 .HasMaxLength(256);
         }
-
-        // 將文字轉為 Base64（使用 UTF-8 編碼）
-        private static string StringToBase64(string input)
-        {
-            if (input == null) throw new ArgumentNullException(nameof(input));
-            return Convert.ToBase64String(Encoding.UTF8.GetBytes(input));
-        }
     }
 }

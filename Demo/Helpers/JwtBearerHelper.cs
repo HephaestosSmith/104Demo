@@ -9,6 +9,11 @@ namespace Demo.Helpers
 {
     public class JwtBearerHelper
     {
+        /// <summary>
+        /// 取得驗證JWT的參數
+        /// </summary>
+        /// <param name="jwtSetting">JWT設定</param>
+        /// <returns></returns>
         public static TokenValidationParameters GetTokenValidationParameters(JwtSetting jwtSetting)
         {
             var securityKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(jwtSetting.Secret));
